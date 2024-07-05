@@ -1,6 +1,6 @@
 {
   "name": "@uniswap/v3-sdk",
-  "version": "3.4.1-auroria.1",
+  "version": "3.4.2-auroria.1",
   "repository": "https://github.com/adimov-eth/v3-sdk.git",
   "description": "⚒️ An SDK for building applications on top of Uniswap V3",
   "keywords": [
@@ -15,8 +15,10 @@
     "dist"
   ],
   "engines": {
-    "node": ">=10"
+    "node": ">=10",
+    "yarn": ">=3.2.3"
   },
+  "packageManager": "yarn@3.2.3",
   "scripts": {
     "build": "tsdx build",
     "lint": "tsdx lint src",
@@ -53,34 +55,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "release": {
-    "extends": "semantic-release-monorepo",
-    "branches": [
-      {
-        "name": "main",
-        "prerelease": false
-      }
-    ],
-    "plugins": [
-      [
-        "@semantic-release/commit-analyzer",
-        {
-          "preset": "angular",
-          "releaseRules": "../../publishing/release-rules.cjs"
-        }
-      ],
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/npm",
-      "@semantic-release/github",
-      [
-        "@semantic-release/exec",
-        {
-          "successCmd": "git restore yarn.lock && yarn",
-          "failCmd": "git restore yarn.lock && yarn",
-          "execCwd": "../.."
-        }
-      ]
-    ]
   }
 }

@@ -1,6 +1,8 @@
 # build output
 # dist
-
+.yarn/cache
+.yarn/versions
+.yarn/install-state.gz
 # Logs
 logs
 *.log
